@@ -20,7 +20,7 @@ body {
     line-height: 1.6;
 }
 
-/* Encabezado con Alineación de Logo */
+/* Encabezado */
 .header {
     background-color: var(--blanco);
     padding: 15px 5%;
@@ -33,7 +33,6 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
 }
 
 .logo-text {
@@ -44,13 +43,6 @@ body {
 
 .logo-text span {
     color: var(--fucsia);
-}
-
-.logo-img {
-    height: 40px;
-    width: 40px;
-    object-fit: cover;
-    border-radius: 8px;
 }
 
 /* Sección de Bienvenida (Hero) */

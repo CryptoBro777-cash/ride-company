@@ -41,7 +41,8 @@
         <h2>Solicita tu Transporte</h2>
         <p>Llena tus datos y nos comunicaremos contigo de inmediato.</p>
         
-        <form action="https://ridecompany@protonmail.com" method="POST" class="booking-form">
+        <form id="ride-form" action="https://formspree.io/f/xoqgkyre" method="POST" class="booking-form">
+            <input type="hidden" name="_to" value="ridecompany@protonmail.com">
             
             <div class="form-group">
                 <label for="nombre">Nombre Completo:</label>
@@ -68,7 +69,9 @@
                 <textarea id="notas" name="Notas Adicionales" rows="3" placeholder="Ej. Llevo maletas, está lloviendo fuerte, etc."></textarea>
             </div>
 
-            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+            <button type="submit" id="btn-submit" class="btn-submit">Enviar Solicitud</button>
+            
+            <div id="form-status" class="form-status"></div>
         </form>
     </section>
 
@@ -79,6 +82,53 @@
     <a href="https://wa.me/50495335968?text=Hola,%20necesito%20solicitar%20un%20transporte" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+        const form = document.getElementById("ride-form");
+        const status = document.getElementById("form-status");
+        const submitBtn = document.getElementById("btn-submit");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que la página se recargue o se vaya a otro sitio
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Enviando...";
+            status.className = "form-status"; 
+            status.innerText = "";
+
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.classList.add("success");
+                    status.innerText = "¡Solicitud enviada con éxito! Nos comunicaremos contigo rápido.";
+                    form.reset(); // Limpia los campos del formulario
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerText = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerText = "Hubo un problema. Por favor, intenta de nuevo.";
+                        }
+                    });
+                    status.classList.add("error");
+                }
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Enviar Solicitud";
+            }).catch(error => {
+                status.classList.add("error");
+                status.innerText = "Error de conexión. Revisa tu internet e intenta de nuevo.";
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Enviar Solicitud";
+            });
+        });
+    </script>
 
 </body>
 </html>

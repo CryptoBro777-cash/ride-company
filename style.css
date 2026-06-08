@@ -197,6 +197,35 @@ body {
     background-color: #D8006A;
 }
 
+.btn-submit:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Estado del formulario enviado con JavaScript */
+.form-status {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: #e6fffa;
+    color: #00a389;
+    border: 1px solid #00a389;
+}
+
+.form-status.error {
+    display: block;
+    background-color: #fff5f5;
+    color: var(--fucsia);
+    border: 1px solid var(--fucsia);
+}
+
 /* Pie de Página */
 .footer {
     background-color: var(--texto-oscuro);

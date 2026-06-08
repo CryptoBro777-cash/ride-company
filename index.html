@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roatán Ride | Tu Transporte Seguro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-text">Roatán<span>Ride</span></div>
+            <img src="logo ride co 2.jpeg" alt="Logo Roatán Ride" class="logo-img">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Para nosotros vos si sos importante.</h1>
+            <p>Tu transporte privado y confiable en Roatán. Estés donde estés, vamos por ti.</p>
+            <a href="#solicitar" class="btn-main">Pedir un Ride</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Sin Transporte Propio</h3>
+                <p>Te llevamos de forma segura desde y hacia hoteles, supermercados, playas o cualquier punto de la isla. Olvídate de las complicaciones.</p>
+            </div>
+            <div class="service-card">
+                <h3>¿Está Lloviendo?</h3>
+                <p>Si tenés auto propio pero el clima en Roatán se pone difícil, no arriesgues tu vehículo. Nosotros manejamos por vos en los días lluviosos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solicitar" class="booking-section">
+        <h2>Solicita tu Transporte</h2>
+        <p>Llena tus datos y nos comunicaremos contigo de inmediato.</p>
+        
+        <form action="https://formspree.io/f/xknkqypb" method="POST" class="booking-form">
+            <input type="hidden" name="_to" value="ridecompany@protonmail.com">
+            
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej. +504 9533-5968" required>
+            </div>
+
+            <div class="form-group">
+                <label for="origen">¿Dónde te recogemos? (Origen):</label>
+                <input type="text" id="origen" name="origen" placeholder="Ej. Supermercado Eldon's / Hotel West Bay" required>
+            </div>
+
+            <div class="form-group">
+                <label for="destino">¿A dónde vas? (Destino):</label>
+                <input type="text" id="destino" name="destino" placeholder="Ej. Aeropuerto / French Harbour" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notas">Notas adicionales (Opcional):</label>
+                <textarea id="notas" name="notas" rows="3" placeholder="Ej. Llevo maletas, está lloviendo fuerte, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Roatán Ride. Para nosotros vos si sos importante.</p>
+    </footer>
+
+    <a href="https://wa.me/50495335968?text=Hola,%20necesito%20solicitar%20un%20transporte" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

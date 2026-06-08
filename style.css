@@ -1,0 +1,249 @@
+/* Variables de color y reinicio básico */
+:root {
+    --fucsia: #FF007F;
+    --blanco: #FFFFFF;
+    --gris-claro: #F9F9F9;
+    --texto-oscuro: #1A1A1A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* Encabezado con Alineación de Logo */
+.header {
+    background-color: var(--blanco);
+    padding: 15px 5%;
+    border-bottom: 2px solid var(--fucsia);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--texto-oscuro);
+}
+
+.logo-text span {
+    color: var(--fucsia);
+}
+
+.logo-img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Sección de Bienvenida (Hero) */
+.hero {
+    background-color: var(--fucsia);
+    color: var(--blanco);
+    padding: 100px 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-main {
+    display: inline-block;
+    background-color: var(--blanco);
+    color: var(--fucsia);
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Sección de Servicios */
+.services {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: var(--blanco);
+}
+
+.services h2 {
+    color: var(--fucsia);
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--gris-claro);
+    border: 2px solid var(--fucsia);
+    padding: 30px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 450px;
+}
+
+.service-card h3 {
+    color: var(--fucsia);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* Sección de Formulario */
+.booking-section {
+    background-color: var(--gris-claro);
+    padding: 80px 5%;
+    text-align: center;
+    border-top: 2px solid var(--fucsia);
+}
+
+.booking-section h2 {
+    color: var(--fucsia);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.booking-section p {
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.booking-form {
+    background-color: var(--blanco);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid var(--fucsia);
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--texto-oscuro);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--fucsia);
+    outline: none;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    background-color: var(--fucsia);
+    color: var(--blanco);
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #D8006A;
+}
+
+/* Pie de Página */
+.footer {
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* Botón Flotante de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Responsivo para Celulares */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    .booking-form {
+        padding: 20px;
+    }
+}

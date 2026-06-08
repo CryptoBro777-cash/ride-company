@@ -125,7 +125,7 @@ body {
     font-size: 22px;
 }
 
-/* Sección de Formulario */
+/* Sección de Formulario y Mapa Estructurado */
 .booking-section {
     background-color: var(--gris-claro);
     padding: 80px 5%;
@@ -144,15 +144,45 @@ body {
     color: #555;
 }
 
-.booking-form {
-    background-color: var(--blanco);
-    max-width: 600px;
+.booking-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
+    text-align: left;
+}
+
+.booking-form, .map-container {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--blanco);
     padding: 40px;
     border-radius: 15px;
     border: 2px solid var(--fucsia);
-    text-align: left;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.map-container h3 {
+    color: var(--fucsia);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.map-container p {
+    margin-bottom: 20px;
+}
+
+.responsive-iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 75px; /* Mantiene proporción del mapa estable */
+}
+
+.responsive-iframe iframe {
+    border-radius: 8px;
+    border: 1px solid #ccc !important;
 }
 
 .form-group {
@@ -179,10 +209,11 @@ body {
     outline: none;
 }
 
+/* Botón estilizado hacia WhatsApp */
 .btn-submit {
     display: block;
     width: 100%;
-    background-color: var(--fucsia);
+    background-color: #25D366; /* Verde de WhatsApp para indicar la acción clara al usuario */
     color: var(--blanco);
     border: none;
     padding: 15px;
@@ -191,39 +222,15 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 .btn-submit:hover {
-    background-color: #D8006A;
+    background-color: #1ebd58;
 }
 
-.btn-submit:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
-/* Estado del formulario enviado con JavaScript */
-.form-status {
-    margin-top: 20px;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    display: none;
-}
-
-.form-status.success {
-    display: block;
-    background-color: #e6fffa;
-    color: #00a389;
-    border: 1px solid #00a389;
-}
-
-.form-status.error {
-    display: block;
-    background-color: #fff5f5;
-    color: var(--fucsia);
-    border: 1px solid var(--fucsia);
+.btn-submit i {
+    margin-right: 8px;
 }
 
 /* Pie de Página */
@@ -264,7 +271,10 @@ body {
     .hero-content h1 {
         font-size: 30px;
     }
-    .booking-form {
+    .booking-container {
+        flex-direction: column;
+    }
+    .booking-form, .map-container {
         padding: 20px;
     }
 }
